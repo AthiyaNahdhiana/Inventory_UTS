@@ -13,3 +13,14 @@ services:
        - 9000
      volumes:
         - ./php_code/:/var/www/html/
+   db:    
+      image: mariadb  
+      volumes: 
+        -    mysql-data:/var/lib/mysql
+      environment:  
+       MYSQL_ROOT_PASSWORD: mariadb
+       MYSQL_DATABASE: ecomdb 
+
+
+volumes:
+    mysql-data:
